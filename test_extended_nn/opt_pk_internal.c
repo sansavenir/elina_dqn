@@ -28,7 +28,7 @@
 #include "opt_pk_internal.h"
 #include "opt_pk_vector.h"
 #include "opt_pk_matrix.h"
-#include "python3.5m/Python.h"
+#include "python3.6m/Python.h"
 
 /* ********************************************************************** */
 /* I. Constructor and destructor for internal */
