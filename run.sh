@@ -70,7 +70,7 @@ cd /home/cav2018/CAV2018/Benchmarks/
 for file in *.c
 do
   basefile=`basename ${file}`
-  echo "Running ${basefile} with Poly-RL" | colorize blue
+  echo "Running ${basefile} with Poly-DQN" | colorize blue
   timeout 3600 /home/cav2018/seahorn/build/run/bin/sea pf --crab --crab-dom=opt-pk-elina $file > /home/cav2018/CAV2018/results/Poly-RL/${basefile}_runtime.txt
   mv /tmp/invariants.txt /home/cav2018/CAV2018/results/Poly-RL/${basefile}_invariants.txt
 done
