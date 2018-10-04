@@ -33,8 +33,36 @@ do
   mv /tmp/invariants.txt /home/cav2018/CAV2018/results/Poly-RL/${basefile}_invariants.txt
 done
 
-echo "compiling and installing Poly-Fixed" | colorize green
-cd /home/cav2018/ELINA/poly_fixed
+# echo "compiling and installing Poly-Fixed" | colorize green
+# cd /home/cav2018/ELINA/poly_fixed
+# make clean
+# make 
+# make install
+# cd /home/cav2018/CAV2018/Benchmarks/ 
+# for file in *.c
+# do
+#   basefile=`basename ${file}`
+#   echo "Running ${basefile} with Poly-Fixed" | colorize green
+#   timeout 3600 /home/cav2018/seahorn/build/run/bin/sea pf --crab --crab-dom=opt-pk-elina $file > /home/cav2018/CAV2018/results/Poly-Fixed/${basefile}_runtime.txt
+#   mv /tmp/invariants.txt /home/cav2018/CAV2018/results/Poly-Fixed/${basefile}_invariants.txt
+# done
+
+# echo "compiling and installing Poly-Init" | colorize yellow
+# cd /home/cav2018/ELINA/poly_init
+# make clean
+# make 
+# make install
+# cd /home/cav2018/CAV2018/Benchmarks/ 
+# for file in *.c
+# do
+#   basefile=`basename ${file}`
+#   echo "Running ${basefile} with Poly-Init" | colorize yellow
+#   timeout 3600 /home/cav2018/seahorn/build/run/bin/sea pf --crab --crab-dom=opt-pk-elina $file > /home/cav2018/CAV2018/results/Poly-Init/${basefile}_runtime.txt
+#   mv /tmp/invariants.txt /home/cav2018/CAV2018/results/Poly-Init/${basefile}_invariants.txt
+# done
+
+echo "compiling and installing Poly-DQN" | colorize blue
+cd ~/Desktop/elina_dqn/test_extended_nn
 make clean
 make 
 make install
@@ -42,25 +70,10 @@ cd /home/cav2018/CAV2018/Benchmarks/
 for file in *.c
 do
   basefile=`basename ${file}`
-  echo "Running ${basefile} with Poly-Fixed" | colorize green
-  timeout 3600 /home/cav2018/seahorn/build/run/bin/sea pf --crab --crab-dom=opt-pk-elina $file > /home/cav2018/CAV2018/results/Poly-Fixed/${basefile}_runtime.txt
-  mv /tmp/invariants.txt /home/cav2018/CAV2018/results/Poly-Fixed/${basefile}_invariants.txt
+  echo "Running ${basefile} with Poly-RL" | colorize blue
+  timeout 3600 /home/cav2018/seahorn/build/run/bin/sea pf --crab --crab-dom=opt-pk-elina $file > /home/cav2018/CAV2018/results/Poly-RL/${basefile}_runtime.txt
+  mv /tmp/invariants.txt /home/cav2018/CAV2018/results/Poly-RL/${basefile}_invariants.txt
 done
-
-echo "compiling and installing Poly-Init" | colorize yellow
-cd /home/cav2018/ELINA/poly_init
-make clean
-make 
-make install
-cd /home/cav2018/CAV2018/Benchmarks/ 
-for file in *.c
-do
-  basefile=`basename ${file}`
-  echo "Running ${basefile} with Poly-Init" | colorize yellow
-  timeout 3600 /home/cav2018/seahorn/build/run/bin/sea pf --crab --crab-dom=opt-pk-elina $file > /home/cav2018/CAV2018/results/Poly-Init/${basefile}_runtime.txt
-  mv /tmp/invariants.txt /home/cav2018/CAV2018/results/Poly-Init/${basefile}_invariants.txt
-done
-
 
 cd /home/cav2018/ELINA/elina_poly
 make 
