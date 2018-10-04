@@ -215,7 +215,7 @@ elina_manager_t* opt_pk_manager_alloc(bool strict)
   PyRun_SimpleString("from keras import backend as K");
 
   wchar_t  Path[30];
-  mbstowcs(Path, "/home/jkotal/test_nns",30);
+  mbstowcs(Path, "~/Desktop/elina_dqn",30);
   PySys_SetPath(Path);
 
 
